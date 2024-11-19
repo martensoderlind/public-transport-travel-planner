@@ -1,5 +1,5 @@
-import { db } from "../db/index";
-import { stations } from "../db/schema";
+import { db } from "./db/index";
+import { stations } from "./db/schema";
 
 export function createRepository() {
   return {

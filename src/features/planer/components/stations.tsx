@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { createFeature } from "./instance";
+import { createFeature } from "../instance";
 import { Station, StationType } from "./station";
 
 export async function Stations() {

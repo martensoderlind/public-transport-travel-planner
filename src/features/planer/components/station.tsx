@@ -7,3 +7,4 @@ export type StationType = {
 export function Station({ station }: { station: StationType }) {
   return <li className="step">{station.name}</li>;
 }
+//step-primary
