@@ -11,7 +11,7 @@ export function Form({ setStations }: Props) {
     const origin = formData.get("from") as string;
     const destination = formData.get("to") as string;
     const route = await trip(origin, destination);
-    console.log(route);
+    console.log(route.Trip[0].LegList.Leg);
     if (route && route.Trip && route.Trip[0]?.LegList?.Leg[0]?.Stops?.Stop) {
       setStations(route.Trip[0].LegList.Leg);
     } else {
@@ -23,11 +23,13 @@ export function Form({ setStations }: Props) {
       action={async (formData: FormData) => {
         await getRout(formData);
       }}
-      className=" container mx-auto flex flex-col items-center rounded-md w-2/4 m-4 p-4"
+      className=" container mx-auto flex flex-col items-center m-4 p-4 bg-slate-100 rounded-md w-full md:w-4/12"
     >
-      <h1 className=" text-3xl text-center">Sök din resa</h1>
+      <h1 className=" text-3xl text-center text-gray-900">Sök din resa</h1>
       <div className="flex flex-col">
-        <label htmlFor="">Från:</label>
+        <label htmlFor="" className="text-gray-700">
+          Från:
+        </label>
         <input
           type="text"
           name="from"
@@ -36,7 +38,9 @@ export function Form({ setStations }: Props) {
         />
       </div>
       <div className="flex flex-col">
-        <label htmlFor="">Till:</label>
+        <label htmlFor="" className="text-gray-700">
+          Till:
+        </label>
         <input
           type="text"
           name="to"
