@@ -1,3 +1,4 @@
+import { CapitalFirstLetter } from "./logic";
 import { Repository } from "./repository";
 
 export function createService(repository: Repository) {
@@ -7,8 +8,9 @@ export function createService(repository: Repository) {
       return await repository.getAll();
     },
     async getStationId(name: string) {
+      const formatedName = CapitalFirstLetter(name);
       try {
-        const url = `https://api.resrobot.se/v2.1/location.name?input=${name}&format=json&accessId=${api_key}`;
+        const url = `https://api.resrobot.se/v2.1/location.name?input=${formatedName}&format=json&accessId=${api_key}`;
         const data = await fetch(url);
         const posts = await data.json();
         return posts;
