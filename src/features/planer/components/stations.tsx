@@ -1,18 +1,25 @@
 import { Suspense } from "react";
-import { createFeature } from "../instance";
-import { Station, StationType } from "./station";
+import { Station } from "./station";
+import { Leg } from "../type";
 
-export async function Stations() {
-  const stations1: StationType[] = await createFeature.service.getAll();
+export function Stations({ stations }: { stations: Leg[] | null }) {
+  if (!stations) {
+    return (
+      <div className="container mx-auto text-center p-4">
+        Sök efter en resa för att se stationer
+      </div>
+    );
+  }
+
   return (
-    <>
-      <ul className="steps steps-vertical lg:steps-horizontal container mx-auto">
-        <Suspense>
-          {stations1.map((station2, index) => (
-            <Station key={index} station={station2} />
+    <div className="container mx-auto flex align-middle justify-center">
+      <ul className="steps steps-vertical ">
+        <Suspense fallback={<div>Laddar stationer...</div>}>
+          {stations.map((station) => (
+            <Station key={station.id} station={station[0].Stops.Stop} />
           ))}
         </Suspense>
       </ul>
-    </>
+    </div>
   );
 }

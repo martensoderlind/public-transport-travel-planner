@@ -28,7 +28,7 @@ export function createService(repository: Repository) {
     },
     async getTrip(fromStation: string, toStation: string) {
       try {
-        const url = `https://api.resrobot.se/v2.1/trip?originId=${fromStation}&destId=${toStation}&passlist=true&showPassingPoints=true&format=json&numTrips=5&accessId=${api_key}&`;
+        const url = `https://api.resrobot.se/v2.1/trip?originId=${fromStation}&destId=${toStation}&passlist=true&showPassingPoints=true&format=json&numTrips=5&accessId=${api_key}`;
         const data = await fetch(url);
         const posts = await data.json();
         return posts;

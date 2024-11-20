@@ -1,7 +1,6 @@
 "use server";
 
 import { createFeature } from "./instance";
-// import { direction } from "./logic";
 
 // export async function getDestination(formData: FormData) {
 //   const from = formData.get("from") as string;

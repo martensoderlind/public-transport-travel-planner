@@ -1,10 +1,5 @@
-export type StationType = {
-  id: number;
-  name: string;
-  line: string;
-};
+import { Stop } from "../type";
 
-export function Station({ station }: { station: StationType }) {
-  return <li className="step">{station.name}</li>;
+export function Station({ station }: { station: Stop }) {
+  return <li className="step text-black">{station.name}</li>;
 }
-//step-primary

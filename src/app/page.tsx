@@ -1,11 +1,5 @@
-import { Stations } from "@/features/planer/components/stations";
-import { Form } from "../features";
+import TravelBoard from "@/features/planer/components/travel-board";
 
 export default function Home() {
-  return (
-    <>
-      <Form />
-      <Stations />
-    </>
-  );
+  return <TravelBoard />;
 }
