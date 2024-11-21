@@ -23,7 +23,7 @@ export function Form({ setStations }: Props) {
       action={async (formData: FormData) => {
         await getRout(formData);
       }}
-      className=" container mx-auto flex flex-col items-center m-4 p-4 bg-slate-100 rounded-md w-full md:w-4/12"
+      className=" container mx-auto flex flex-col items-center m-4 p-4 bg-slate-100 rounded-md w-full md:w-4/12 shadow-lg"
     >
       <h1 className=" text-3xl text-center text-gray-900">Sök din resa</h1>
       <div className="flex flex-col">
@@ -34,7 +34,7 @@ export function Form({ setStations }: Props) {
           type="text"
           name="from"
           id="from"
-          className="input input-bordered w-full max-w-xs bg-gray-300"
+          className="input input-bordered w-full max-w-xs bg-gray-300 text-black"
         />
       </div>
       <div className="flex flex-col">
@@ -45,7 +45,7 @@ export function Form({ setStations }: Props) {
           type="text"
           name="to"
           id="to"
-          className="input input-bordered w-full max-w-xs bg-gray-300"
+          className="input input-bordered w-full max-w-xs bg-gray-300 text-black"
         />
       </div>
       <button className="btn my-2" type="submit">

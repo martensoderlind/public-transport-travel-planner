@@ -11,7 +11,7 @@ export default function TripInfo({ stations }: { stations: Leg[] | null }) {
     );
   }
   return (
-    <div className="container mx-auto flex flex-col align-middle justify-center bg-slate-100 rounded-md w-full md:w-4/12 p-2 my-4">
+    <div className="container mx-auto flex flex-col align-middle justify-center bg-slate-100 rounded-md w-full md:w-4/12 p-2 my-4 shadow-lg">
       {/* <TravelInfo stations={stations} /> */}
       {stations.map((station) => (
         <TravelInfo key={station.idx} stations={station} />

@@ -234,3 +234,16 @@ export type Leg = {
   directionFlag: string;
   duration: string;
 };
+
+export type OriginStation = {
+  depDate: string;
+  depDir: string;
+  depTime: string;
+  extId: string;
+  id: string;
+  lat: number;
+  lon: number;
+  minimumChangeDuration: string;
+  name: string;
+  routeIdx: number;
+};

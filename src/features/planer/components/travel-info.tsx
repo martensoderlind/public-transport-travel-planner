@@ -5,11 +5,15 @@ export default function TravelInfo({ stations }: { stations: Leg | null }) {
     <section className="border-b-2 mb-2">
       <article>
         <h1 className="text-xl font-semibold text-black">
-          {stations!.name.split("-")[1]}
+          {`${stations!.name.split("-")[1]} - ${
+            stations!.direction.split("T-bana")[0]
+          }`}
         </h1>
         <p>
           Från:{" "}
-          <strong className="text-gray-700">{stations!.Origin.name}</strong>
+          <strong className="text-gray-700">
+            {stations!.Origin.name.split("T-bana")[0]}
+          </strong>
         </p>
         <p>
           Kl: <strong className="text-gray-700">{stations!.Origin.time}</strong>
@@ -19,7 +23,7 @@ export default function TravelInfo({ stations }: { stations: Leg | null }) {
         <p>
           Till:{" "}
           <strong className="text-gray-700">
-            {stations!.Destination.name}
+            {stations!.Destination.name.split("T-bana")[0]}
           </strong>
         </p>
         <p>
